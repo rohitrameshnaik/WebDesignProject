@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">Professor Search Result</h1>
+    </div>
+  
+    <div class="panel-body" id="users">
+  <h2>All Users</h2>
+    <div class="row" *ngFor="let user of users">
+      <div class="card card-block block">
+        <h4 class="card-title">Name: <b>{{user.firstName}} {{user.lastName}}</b></h4>
+        <ul>                   
+          <li><p>Identity: {{user.identity}}</p></li> 
+          <li><p>Major: {{user.major}}</p></li>         
+        </ul>
+      </div>
+    </div>
+    <button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Goto home</button>
+<p></p>    
+</div>
+</div>
+<!-- <a (click)="deleteUser(user._id)">Delete</a> -->

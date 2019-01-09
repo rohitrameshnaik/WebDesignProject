@@ -1,0 +1,31 @@
+hr{
+    width: 100%;
+    // border-color: black;
+}
+.radio{
+    display: inline-block;
+    // width: 120px;
+    margin-left: 50px;
+}
+.radioLabel{
+    padding: 0;
+}
+.radioBar{
+    margin: 10px;
+}
+
+.categary{
+    float: left;
+    margin-right: 3px;
+    border:solid;
+}
+.clear {
+    clear: both;
+}
+.ques:hover{
+    background-color: hsla(0, 0, 0, 0.1);
+    transform: scale(1.03, 1.1);
+}
+a{
+    color: rgb(12, 106, 143);
+}

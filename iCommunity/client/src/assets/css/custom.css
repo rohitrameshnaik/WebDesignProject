@@ -1,0 +1,52 @@
+.body p{
+    font-family: serif !important;
+    font-size: 18px;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: black;
+	}
+
+#side-carousel img {
+	margin: 0 auto;
+	}
+
+.footer-blurb {
+    padding: 30px 0;
+    margin-top: 20px;
+    background-color: #eee;
+    color: black;
+}
+    
+.footer-blurb-item {
+    padding: 20px;
+    }
+ 
+.small-print {
+	background-color: #fff;
+	padding: 30px 0;
+}
+
+.feature,
+.page-intro,
+.article-intro,
+.small-print {
+	text-align: center;
+	}
+	
+	.panel
+	{
+		background: white;
+		-webkit-box-shadow:0 10px 10px rgba(0, 0, 0, 0.5) !important;
+		-moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5) !important;
+		box-shadow:  0 10px 10px rgba(0, 0, 0, 0.5) !important;
+		z-index:5;
+	}
+
+	.block{
+		border-radius: 10px;
+		padding: 10px;
+		margin-bottom: 5px;
+		border: 1px solid rgb(228, 224, 224);
+	}

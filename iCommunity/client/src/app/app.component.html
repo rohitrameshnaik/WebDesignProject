@@ -1,0 +1,26 @@
+<!-- main app container -->
+<div>
+    <picture-wall *ngIf="showIndex" (notify)="onNotifyClicked($event)"></picture-wall>
+    <nav (notify)="showPictureWall($event)" *ngIf="!showIndex"class="navbar navbar-inverse navbar-static-top" role="navigation"></nav>
+
+    <div class="container-fluid" *ngIf="!showIndex">
+        <div class="col-sm-3">
+            <local-search></local-search>
+            <notice *ngIf="currentUser"></notice>
+            <login *ngIf="!currentUser"></login>
+            <app-myquestions *ngIf="currentUser"></app-myquestions>
+        </div>
+        <div class="col-sm-9">
+            <!-- <div class="jumbotron"> -->
+                <!-- <div class="container"> -->
+                    <alert></alert>
+                    <router-outlet></router-outlet>
+                <!-- </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+</div>
+<hr>
+<!-- <picture-wall></picture-wall> -->
+
+<footer-test></footer-test>

@@ -1,0 +1,35 @@
+
+<h4 class="tac">There are {{ universities.length }} universities in the radius of {{ radius }} meters.</h4>
+<table class="table table-hover table-bordered">
+	<tr>
+		<th>
+			
+		</th>
+		<th>
+			Name
+		</th>
+		<th>
+			Address
+		</th>
+		<th>
+			Evaluation
+		</th>
+	</tr>
+
+	<tr *ngFor="let rest of universities; let i = index" class="class">
+
+		<td>
+			{{i + 1}}
+		</td>
+		<td>
+			{{ rest.name }}
+		</td>
+		<td>
+			{{ rest.vicinity }}
+		</td>
+		<td>
+			<span [ngClass] = "{'badge badge-unknown':!rest.rating}">{{ (rest.rating) ? rest.rating : 'Unknown' }}</span>
+		</td>
+	</tr>
+</table>
+

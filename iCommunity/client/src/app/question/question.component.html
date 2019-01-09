@@ -1,0 +1,52 @@
+<div *ngIf="currentUser" class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Post</h2>
+        </div>
+    
+     <div class="panel-body">
+      <form (ngSubmit)="postQuestion()">
+        <div class="form-group">
+          <label class="col-form-label">Question Title</label>
+          <input class="form-control form-control-lg" type="text" [(ngModel)]="newQuestion" name="question" ng-model="newQuestion" placeholder="Please enter question title">
+        </div>
+        <div class="form-group">
+          <label class="col-form-label">Question Description</label>
+          <textarea rows="3" class="form-control form-control-lg" type="text" [(ngModel)]="questionContent" name="question" ng-model="questionContent" placeholder="Please enter question description"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="col-form-label">Category</label>
+          <select [(ngModel)]="questionCategory" name="category" class="form-control form-control-lg selectpicker" placeholder="Please select a category">
+              <option *ngFor="let category of categories">{{ category }}</option>
+          </select>
+        </div>
+        <button class="btn btn-primary">Post</button>
+        <button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Cancel to home</button>
+      </form>
+  </div>
+  </div>
+  <!-- <hr *ngIf="currentUser"> -->
+  
+  <div class="panel panel-default" id="questions">
+    <div class="panel-heading">
+      <h2 class="panel-title">Question</h2>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="currentUser" class="radioBar panel-body">
+      <div class="radio">
+      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)='getQuestionByCategory("All")' [value]=null/>
+      <label class="radioLabel">All</label>
+      </div>
+      <div class="radio" *ngFor="let category of categories">
+      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)="getQuestionByCategory(category)" value={{category}}/>
+      <label class="radioLabel">{{category}}</label>
+      </div>
+    </div>
+      <!-- <div class="panel-body"> -->
+        <div class="block ques" *ngFor="let question of questions">
+          <h4 class="card-title">{{ question.title }}</h4>
+          <p><small>created by <a (click)="showEmail(question.creator.id)">{{question.creator.user}}</a> on {{ question.created_date | date:'short'}}</small></p>
+          <a [routerLink]="['/questions', question._id]" class="card-link">View Answers</a>
+        </div>
+      <!-- </div> -->
+  </div>
+  </div>
